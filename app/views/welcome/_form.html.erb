@@ -1,0 +1,15 @@
+
+<div>
+    <form>
+        <div class="form-group">
+            <%= label_tag :title , "Task name" %>
+            <%= text_field_tag :title , task.title, class: 'form-control' , placeholder: 'Task name' %>
+        </div>
+        <div class="form-group">
+            <%= label_tag :content , "Content" %>
+            <%= text_area :content , task.content, class: 'form-control' ,rows: 10, placeholder: 'Task Content' %>
+        </div>
+         <%= submit_tag "Save", class: 'btn btn-primary' %>
+    </form>
+    <%= link_to "Back to taks list", task_path %>
+</div>

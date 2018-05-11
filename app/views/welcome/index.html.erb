@@ -1,0 +1,45 @@
+
+<div>
+    <%= link_to "Create new task", task_new_path , class: "btn btn-primary mb-2"%>
+    <form>
+        <div class="form-row align-items-s">
+            <div class="col-auto">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Ex: abc">
+                </div>
+            </div>
+                <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-2">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">title</th>
+        <th scope="col">content</th>
+        <th scope="col">created_at</th>
+        <th scope="col">updated_at</th>
+        <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @datas.each do |item| -%>
+        <tr>
+        <td scope="row"><%= item.id%></td>
+        <td><%= item.title%></td>
+        <td><%= item.content%></td>
+        <td><%= item.created_at%></td>
+        <td><%= item.updated_at%></td>
+        <th scope="col">
+            <%= link_to "detail", "http://example.com"%> |
+            <%= link_to "edit", "http://example.com"%> |
+            <%= link_to "delete", "http://example.com"%> 
+        </th>
+        </tr>
+    <% end -%>
+  </tbody>
+</table>
